@@ -1,6 +1,7 @@
 package fr.tse.fisa3de.yves;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -26,14 +27,31 @@ public class Fridge {
 
 	/**
 	 * Add something into the fridge inventory
-	 * @param l_tempFood The food to add
+	 * @param p_Food The food to add
 	 */
 	public void addFoodstuff(Foodstuff p_Food) {
 		m_inventory.add(p_Food);
 	}
 
 	/**
+	 * Remove something into the fridge inventory
+	 * @param p_foodToRemove The food to remove
+	 */
+	boolean removeFoodstuff(Foodstuff p_foodToRemove) {
+		boolean found = false;
+		Iterator<Foodstuff> i = this.m_inventory.iterator();
+		while (i.hasNext()) {
+			Foodstuff f = i.next();
+			if (f == p_foodToRemove) {
+				i.remove();
+				return true;
+			}
+		}
+		return found;
+	}
+
+	/**
 	 * Describes the foodstuff contained inside the fridge as a list
 	 */
-	private List<Foodstuff> m_inventory;
+	private final List<Foodstuff> m_inventory;
 }

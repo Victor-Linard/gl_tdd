@@ -18,10 +18,15 @@ public class App {
 		theFridge.addFoodstuff(l_tempFood);
 		
 		// Add second 
-		l_foodName = "tupperware rempli du reste de chilicon carné d'hier";
+		l_foodName = "tupperware rempli du reste de chili con carné d'hier";
 		Foodstuff l_tempFood2 = new Foodstuff(l_foodName);
 		theFridge.addFoodstuff(l_tempFood2);
-		
+
+		// Add third
+		l_foodName = "concombre";
+		Foodstuff l_tempFood3 = new Foodstuff(l_foodName);
+		theFridge.addFoodstuff(l_tempFood3);
+
 		// Display
 		List<Foodstuff> l_foodList = theFridge.getAllFoodstuff();
 		for (Foodstuff foodstuff : l_foodList) {
